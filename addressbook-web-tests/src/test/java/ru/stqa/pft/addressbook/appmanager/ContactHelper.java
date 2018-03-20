@@ -33,16 +33,26 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectContact() {
-        if (!wd.findElement(By.id("8")).isSelected()) {
-            wd.findElement(By.id("8")).click();
+        if (!wd.findElement(By.id("12")).isSelected()) {
+            wd.findElement(By.id("12")).click();
         }
     }
 
     public void submitContactDeletion() {
-        wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+        click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
     }
 
     public void closeDialogWindow() {
         wd.switchTo().alert().accept();
+    }
+
+    public void editContactPencil() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+
+    }
+
+    public void submitUpdate() {
+        click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+
     }
 }
