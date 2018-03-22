@@ -33,9 +33,8 @@ public class ContactHelper extends HelperBase {
     }
 
     public void selectContact() {
-        if (!wd.findElement(By.id("12")).isSelected()) {
-            wd.findElement(By.id("12")).click();
-        }
+        click(By.name("selected[]"));
+
     }
 
     public void submitContactDeletion() {
