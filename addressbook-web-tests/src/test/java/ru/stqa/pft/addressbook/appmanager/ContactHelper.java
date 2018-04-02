@@ -1,9 +1,7 @@
 package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
@@ -39,7 +37,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public void initContactCreation() {
-       click(By.name("firstname"));
+       click(By.linkText("add new"));
     }
 
     public void selectContact() {
@@ -71,7 +69,7 @@ public class ContactHelper extends HelperBase {
 
     public void createContact(ContactData contact, boolean b) {
         initContactCreation();
-        fillContactInfo(new ContactData("Katya", "Sadeeva", null, null, null, null, "Test1"), true);
+        fillContactInfo(contact ,true);
         submitContactCreation();
         returnToHomePage();
     }
