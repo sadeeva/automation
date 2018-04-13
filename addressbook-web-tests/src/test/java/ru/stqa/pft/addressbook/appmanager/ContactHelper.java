@@ -94,4 +94,10 @@ public class ContactHelper extends HelperBase {
         }
         return contacts;
     }
+    public void modifyContact(int index, ContactData contact) {
+        selectContact(index);
+        editContactPencil();
+        fillContactInfo(contact,false);
+        submitUpdate();
+    }
 }
